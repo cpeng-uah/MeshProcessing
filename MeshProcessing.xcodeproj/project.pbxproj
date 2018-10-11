@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15F7604E216FD8BA009A6221 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15F7604D216FD8BA009A6221 /* main.cpp */; };
+		159D23432170035C0048FC53 /* libOpenMeshCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 159D23412170035C0048FC53 /* libOpenMeshCore.a */; };
+		159D23442170035C0048FC53 /* libOpenMeshTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 159D23422170035C0048FC53 /* libOpenMeshTools.a */; };
+		159D2347217004050048FC53 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 159D2346217004050048FC53 /* OpenGL.framework */; };
+		159D23492170040A0048FC53 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 159D23482170040A0048FC53 /* GLUT.framework */; };
+		159D234B217004BE0048FC53 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 159D234A217004BE0048FC53 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +27,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		159D23412170035C0048FC53 /* libOpenMeshCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOpenMeshCore.a; path = ../../MyLib/Mac_Frameworks/OpenMesh/lib/libOpenMeshCore.a; sourceTree = "<group>"; };
+		159D23422170035C0048FC53 /* libOpenMeshTools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOpenMeshTools.a; path = ../../MyLib/Mac_Frameworks/OpenMesh/lib/libOpenMeshTools.a; sourceTree = "<group>"; };
+		159D2346217004050048FC53 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		159D23482170040A0048FC53 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		159D234A217004BE0048FC53 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		15F7604A216FD8BA009A6221 /* MeshProcessing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MeshProcessing; sourceTree = BUILT_PRODUCTS_DIR; };
-		15F7604D216FD8BA009A6221 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +40,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				159D23492170040A0048FC53 /* GLUT.framework in Frameworks */,
+				159D2347217004050048FC53 /* OpenGL.framework in Frameworks */,
+				159D23442170035C0048FC53 /* libOpenMeshTools.a in Frameworks */,
+				159D23432170035C0048FC53 /* libOpenMeshCore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		159D2345217004050048FC53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				159D23482170040A0048FC53 /* GLUT.framework */,
+				159D2346217004050048FC53 /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		15F76041216FD8BA009A6221 = {
 			isa = PBXGroup;
 			children = (
-				15F7604C216FD8BA009A6221 /* MeshProcessing */,
+				159D23412170035C0048FC53 /* libOpenMeshCore.a */,
+				159D23422170035C0048FC53 /* libOpenMeshTools.a */,
+				15F7604C216FD8BA009A6221 /* src */,
 				15F7604B216FD8BA009A6221 /* Products */,
+				159D2345217004050048FC53 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +78,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		15F7604C216FD8BA009A6221 /* MeshProcessing */ = {
+		15F7604C216FD8BA009A6221 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				15F7604D216FD8BA009A6221 /* main.cpp */,
+				159D234A217004BE0048FC53 /* main.cpp */,
 			);
-			path = MeshProcessing;
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15F7604E216FD8BA009A6221 /* main.cpp in Sources */,
+				159D234B217004BE0048FC53 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,10 +198,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Users/cpeng/Documents/Projects/MeshProcessing/Frameworks/;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -223,9 +249,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Users/cpeng/Documents/Projects/MeshProcessing/Frameworks/;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -233,7 +261,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/Users/cpeng/Documents/MyLib/include/,
+					/Users/cpeng/Documents/MyLib/Mac_Frameworks/,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/OpenMesh/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -241,7 +278,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/Users/cpeng/Documents/MyLib/include/,
+					/Users/cpeng/Documents/MyLib/Mac_Frameworks/,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/OpenMesh/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
